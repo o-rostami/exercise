@@ -1,0 +1,18 @@
+{
+	"info": {
+		"_postman_id": "6767f812-6b62-4989-b946-cae3db118f92",
+		"name": "exercise",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3523223"
+	},
+	"item": [
+		{
+			"name": "product",
+			"request": {
+				"method": "POST",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
