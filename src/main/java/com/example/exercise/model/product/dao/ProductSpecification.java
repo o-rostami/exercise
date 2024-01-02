@@ -37,6 +37,7 @@ public class ProductSpecification implements Specification<Product> {
 				} return cb.notLike(cb.lower(root.get(searchCriteria.getFilterKey())), "%" + strToSearch + "%");
 
 		}
+		//todo complete all other operation later
 
 		return null;
 	}

@@ -1,6 +1,6 @@
 # Exersice
 
-<h3>manage your product and comments.</h3>
+<h3>Manage your product and comments.</h3>
 
 This project has been implemented as an assigment. In this project two popular frameworks including Spring boot and
 hibernate used to develop the back end part.

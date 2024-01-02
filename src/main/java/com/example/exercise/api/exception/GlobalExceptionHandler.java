@@ -18,13 +18,14 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 	@ExceptionHandler(Exception.class)
 	public final ResponseEntity<Object> handleGeneralException(Exception ex, WebRequest request) {
-		log.error("unexpected error ", ex); return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
+		log.error("unexpected error ", ex);
+		return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
 	}
 
 	@ExceptionHandler(ProductNotFoundException.class)
 	public final ResponseEntity<Object> handleGeneralException(ProductNotFoundException ex, WebRequest request) {
 		log.error("product not found exception occurred with request {} and response ", request, ex);
-		return buildResponseEntity(new CustomErrorResponse(HttpStatus.NOT_FOUND, ex.getMessage(), ex,ex.getErrorCode()));
+		return buildResponseEntity(new CustomErrorResponse(HttpStatus.NOT_FOUND, ex.getMessage(), ex, ex.getErrorCode()));
 	}
 
 	private ResponseEntity<Object> buildResponseEntity(CustomErrorResponse response) {

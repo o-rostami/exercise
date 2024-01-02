@@ -47,20 +47,15 @@ public class ProductServiceImpl implements ProductService {
 		productRepository.deleteById(productId);
 	}
 
-	@Override
-	public List<Product> fetchAll() {
-		return productRepository.findAll();
-	}
-
+	// Search operation
 	@Override
 	public Page<Product> findBySearchCriteria(ProductSearchDto productSearchDto, int pageNum, int pageSize) {
-
 		ProductSpecificationBuilder builder = new ProductSpecificationBuilder();
-		List<SearchCriteria> criteriaList = productSearchDto.getSearchCriteriaList(); if (criteriaList != null) {
+		List<SearchCriteria> criteriaList = productSearchDto.getSearchCriteriaList();
+		if (criteriaList != null) {
 			criteriaList.forEach(x -> {
 				x.setDataOption(productSearchDto.getDataOption()); builder.with(x);
 			});
-		} Pageable page = PageRequest.of(pageNum, pageSize);
-		return productRepository.findAll(builder.build(), page);
+		} Pageable page = PageRequest.of(pageNum, pageSize); return productRepository.findAll(builder.build(), page);
 	}
 }

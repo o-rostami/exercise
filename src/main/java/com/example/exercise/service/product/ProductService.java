@@ -14,7 +14,6 @@ public interface ProductService {
 
 	// Read operation
 	List<Product> fetchProductList(Integer page, Integer size);
-	List<Product> fetchAll();
 
 	// Update operation
 	Product updateProduct(Product product, Long productId);
@@ -22,5 +21,6 @@ public interface ProductService {
 	// Delete operation
 	void deleteProductById(Long productId);
 
+	// Search operation
 	Page<Product> findBySearchCriteria(ProductSearchDto productSearchDto, int pageNum, int pageSize);
 }
